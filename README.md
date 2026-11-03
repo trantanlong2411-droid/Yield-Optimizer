@@ -2,6 +2,12 @@
 
 [Public Cloudflare Worker](https://yield-optimizer.trantanlong2411.workers.dev/) · [GitHub source](https://github.com/trantanlong2411-droid/Yield-Optimizer)
 
+## Verified deployed Mainnet proof
+
+- [Permanent proof with all three real vault yields and the conservative decision](./proof/README.md)
+- [Verified JSON summary](./proof/verified-run.json)
+- [GitHub Actions run 41623535068](https://github.com/trantanlong2411-droid/Yield-Optimizer/actions/runs/41623535068) passed 8/8 tests and actual deployed three-vault comparisons.
+
 ## What the app actually does
 
 A safe, read-only on-chain yield research agent for Pharos Pacific Mainnet (chain ID 1672). It compares **three actual USDC-denominated vault contracts** using their rate/share price at two real historical blocks about seven days apart. An independent mainnet RPC query determines the block timestamps and annualizes share price changes over the observed period.

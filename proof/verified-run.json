@@ -1,0 +1,88 @@
+{
+  "schema": "pharos-yield-optimizer-verified-mainnet-v1",
+  "testDateUtc": "2026-11-03",
+  "sourceRun": "https://github.com/trantanlong2411-droid/Yield-Optimizer/actions/runs/41623535068",
+  "website": "https://yield-optimizer.trantanlong2411.workers.dev/",
+  "network": "Pharos Pacific Mainnet",
+  "chainId": 1672,
+  "observedBlocks": {
+    "current": "22007085",
+    "historical": "21397148",
+    "intervalDays": 7
+  },
+  "vaultYieldSources": [
+    {
+      "id": "morpho",
+      "protocol": "Morpho",
+      "name": "RockawayX USDC",
+      "contract": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+      "rateMethod": "convertToAssets(1e18)",
+      "priorRaw": "1007666",
+      "currentRaw": "1008550",
+      "historicalAnnualizedPercent": 4.681679953307349,
+      "usdUnderlyingVerified": true,
+      "maxDepositForSampleWalletRaw": "0"
+    },
+    {
+      "id": "jtrsy",
+      "protocol": "Centrifuge",
+      "name": "JTRSY USDC",
+      "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+      "rateMethod": "pricePerShare()",
+      "priorRaw": "1120518",
+      "currentRaw": "1121374",
+      "historicalAnnualizedPercent": 4.06493206558165,
+      "usdUnderlyingVerified": true,
+      "maxDepositForSampleWalletRaw": "0",
+      "asyncRedemption": true
+    },
+    {
+      "id": "hyb",
+      "protocol": "Centrifuge",
+      "name": "HYB USDC",
+      "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+      "rateMethod": "pricePerShare()",
+      "priorRaw": "989357",
+      "currentRaw": "992826",
+      "historicalAnnualizedPercent": 20.037126886554635,
+      "usdUnderlyingVerified": true,
+      "maxDepositForSampleWalletRaw": "0",
+      "asyncRedemption": true
+    }
+  ],
+  "gas": {
+    "onChainGasPriceWei": "10000000000",
+    "PROS_USD_oracle": "0x371Ed36aEe5bFFbED1A2aa9b7deD7F4EB30F5466",
+    "oraclePriceUSD": 0.5157429244883943,
+    "estimatedGasUnitsUserAssumption": 420000
+  },
+  "policy": {
+    "initialVault": "morpho",
+    "capitalUSDC": 1000,
+    "holdingDays": 90,
+    "minHoldingDays": 30,
+    "entryFeeBps": 15,
+    "exitFeeBps": 15,
+    "slippageBps": 20,
+    "minNetGainUSD": 1
+  },
+  "recommendation": {
+    "decision": "STAY_PUT",
+    "reason": [
+      "Best modeled vault uses asynchronous settlement with uncertain exit date",
+      "maxDeposit for public sample wallet is zero on the best modeled destination",
+      "A complete executable exit-and-entry path has not been verified"
+    ]
+  },
+  "testResults": {
+    "unitPassed": 8,
+    "unitFailed": 0,
+    "workerBundle": "success",
+    "deployedLiveIntegration": "success"
+  },
+  "transactionPrepared": false,
+  "transactionBroadcast": false,
+  "privateKeysUsed": false,
+  "fullMachineReadableArtifact": "pharos-yield-optimizer-mainnet-proof",
+  "note": "7-day observed share price changes are annualized for comparison, not guaranteed next-year APYs. Fees and gas units are assumptions; the PROS/USD gas valuation uses a live price oracle."
+}
