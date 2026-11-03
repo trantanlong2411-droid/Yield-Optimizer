@@ -1,0 +1,19 @@
+name: Pharos on-chain vault compatibility probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Query actual Pharos mainnet vault ABI, historic rates and oracle
+        run: node scripts/probe-vaults.mjs
