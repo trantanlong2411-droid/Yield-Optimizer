@@ -8,6 +8,10 @@
 - [Verified JSON summary](./proof/verified-run.json)
 - [GitHub Actions run 41623535068](https://github.com/trantanlong2411-droid/Yield-Optimizer/actions/runs/41623535068) passed 8/8 tests and actual deployed three-vault comparisons.
 
+## User-exported original evidence
+
+[Seven-day scenario: original JSON, independently recalculated vault rates, gas, fees and STAY_PUT result](./proof/USER-PROOF.md). The submitted browser result uses block 22008931 and a 7-day holding period against a 30-day minimum. The CI script runs the arithmetic again without fabricating live data.
+
 ## What the app actually does
 
 A safe, read-only on-chain yield research agent for Pharos Pacific Mainnet (chain ID 1672). It compares **three actual USDC-denominated vault contracts** using their rate/share price at two real historical blocks about seven days apart. An independent mainnet RPC query determines the block timestamps and annualizes share price changes over the observed period.

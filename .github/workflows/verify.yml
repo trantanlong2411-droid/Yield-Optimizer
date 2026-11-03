@@ -17,6 +17,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Test three-vault math, net profit, risk gates, invalid input and website
         run: npm test
+      - name: Replay user-exported evidence and verify all calculations
+        run: node scripts/verify-user-export.mjs
       - name: Build Cloudflare Worker
         run: npm run build
   live-three-yield-sources:

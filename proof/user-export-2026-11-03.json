@@ -1,0 +1,180 @@
+{
+  "ok": true,
+  "source": "PHAROS_MAINNET_LIVE_ONCHAIN",
+  "data": {
+    "schema": "pharos-yield-snapshot-v1",
+    "chainId": 1672,
+    "observedAt": "2026-11-03T11:30:40.734Z",
+    "blocks": {
+      "current": "22008931",
+      "prior": "21399233",
+      "currentTimestamp": 1793705439,
+      "priorTimestamp": 1793100639,
+      "days": 7,
+      "targetDays": 7
+    },
+    "vaults": [
+      {
+        "id": "morpho",
+        "name": "Morpho · RockawayX USDC",
+        "protocol": "Morpho",
+        "contract": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+        "source": "https://github.com/DefiLlama/dimension-adapters/blob/master/factory/curators.ts",
+        "modelMethod": "convertToAssets",
+        "asyncExit": false,
+        "block": "22008931",
+        "priorBlock": "21399233",
+        "available": true,
+        "apyPercent": 4.676245385020805,
+        "quantityUnit": "USDC",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "currentRateRaw": "1008553",
+        "priorRateRaw": "1007670",
+        "rateUnits": "USDC smallest units / normalized 1 share (same method on both blocks)",
+        "maxDepositRaw": "0",
+        "depositCapacityAvailable": false,
+        "metric": "Historical 7-day share-price annualization, NOT a guaranteed forward APY",
+        "risk": "Deposits and withdrawal capacity must be checked with the actual wallet before any rebalance."
+      },
+      {
+        "id": "jtrsy",
+        "name": "Centrifuge · JTRSY / USDC",
+        "protocol": "Centrifuge",
+        "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "source": "https://docs.centrifuge.io/developer/protocol/deployments/",
+        "modelMethod": "pricePerShare",
+        "asyncExit": true,
+        "block": "22008931",
+        "priorBlock": "21399233",
+        "available": true,
+        "apyPercent": 4.06493206558165,
+        "quantityUnit": "USDC",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "currentRateRaw": "1121374",
+        "priorRateRaw": "1120518",
+        "rateUnits": "USDC smallest units / normalized 1 share (same method on both blocks)",
+        "maxDepositRaw": "0",
+        "depositCapacityAvailable": false,
+        "metric": "Historical 7-day share-price annualization, NOT a guaranteed forward APY",
+        "risk": "Centrifuge redemptions are asynchronous; execution time and settlement price are not guaranteed."
+      },
+      {
+        "id": "hyb",
+        "name": "Centrifuge · HYB / USDC",
+        "protocol": "Centrifuge",
+        "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "source": "https://docs.centrifuge.io/developer/protocol/deployments/",
+        "modelMethod": "pricePerShare",
+        "asyncExit": true,
+        "block": "22008931",
+        "priorBlock": "21399233",
+        "available": true,
+        "apyPercent": 20.037126886554635,
+        "quantityUnit": "USDC",
+        "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+        "currentRateRaw": "992826",
+        "priorRateRaw": "989357",
+        "rateUnits": "USDC smallest units / normalized 1 share (same method on both blocks)",
+        "maxDepositRaw": "0",
+        "depositCapacityAvailable": false,
+        "metric": "Historical 7-day share-price annualization, NOT a guaranteed forward APY",
+        "risk": "Centrifuge redemptions are asynchronous; execution time and settlement price are not guaranteed."
+      }
+    ],
+    "oracle": {
+      "available": true,
+      "contract": "0x371Ed36aEe5bFFbED1A2aa9b7deD7F4EB30F5466",
+      "block": "22008931",
+      "source": "https://docs.pharos.xyz/tooling-and-infrastructure/oracles/chainlink-pe",
+      "priceUSD": 0.5157429244883943,
+      "oracleTimestamp": 1793701955,
+      "ageSeconds": 3484
+    },
+    "gasPriceWei": "10000000000",
+    "input": {
+      "capital": 1000,
+      "days": 7,
+      "minDays": 30,
+      "entryBps": 15,
+      "exitBps": 15,
+      "slippageBps": 20,
+      "gasUnits": 420000,
+      "minNetUSD": 1,
+      "current": "morpho",
+      "wallet": "0x74B2c2E4E4B771F0C75dcE44f40787468E323f79"
+    },
+    "readOnly": true,
+    "transactionBroadcast": false,
+    "note": "Historical vault share price change is not forward APY. No withdrawal liquidity, subscription access or execution eligibility is promised."
+  },
+  "plan": {
+    "decision": "STAY_PUT",
+    "recommendation": "Stay put — no safe, executable rebalance is verified.",
+    "mostPromisingModel": {
+      "target": "hyb",
+      "name": "Centrifuge · HYB / USDC",
+      "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+      "targetHistoricalApy": 20.037126886554635,
+      "sourceHistoricalApy": 4.676245385020805,
+      "grossGainUSD": 2.6300387991775587,
+      "feeUSD": 5,
+      "gasCostUSD": 0.002166120282851256,
+      "netGainUSD": -2.3721273211052925,
+      "modeledNotGuaranteed": true,
+      "sourceBlock": "22008931",
+      "reasons": [
+        "Async Centrifuge redeem/settlement prevents assuming immediate rebalance",
+        "maxDeposit(wallet) returned zero or could not be verified"
+      ]
+    },
+    "compared": [
+      {
+        "target": "hyb",
+        "name": "Centrifuge · HYB / USDC",
+        "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "targetHistoricalApy": 20.037126886554635,
+        "sourceHistoricalApy": 4.676245385020805,
+        "grossGainUSD": 2.6300387991775587,
+        "feeUSD": 5,
+        "gasCostUSD": 0.002166120282851256,
+        "netGainUSD": -2.3721273211052925,
+        "modeledNotGuaranteed": true,
+        "sourceBlock": "22008931",
+        "reasons": [
+          "Async Centrifuge redeem/settlement prevents assuming immediate rebalance",
+          "maxDeposit(wallet) returned zero or could not be verified"
+        ]
+      },
+      {
+        "target": "jtrsy",
+        "name": "Centrifuge · JTRSY / USDC",
+        "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "targetHistoricalApy": 4.06493206558165,
+        "sourceHistoricalApy": 4.676245385020805,
+        "grossGainUSD": -0.11234654497327412,
+        "feeUSD": 5,
+        "gasCostUSD": 0.002166120282851256,
+        "netGainUSD": -5.114512665256125,
+        "modeledNotGuaranteed": true,
+        "sourceBlock": "22008931",
+        "reasons": [
+          "Async Centrifuge redeem/settlement prevents assuming immediate rebalance",
+          "maxDeposit(wallet) returned zero or could not be verified"
+        ]
+      }
+    ],
+    "gasCostUSD": 0.002166120282851256,
+    "reason": [
+      "Proposed holding period is shorter than configured minimum",
+      "No verified positive net gain above the configured minimum",
+      "No verified end-to-end withdrawal, redeem queue, deposit/approval route or signature plan is available; do not execute from this estimate"
+    ],
+    "methodology": "Annualized on-chain share-price observations over real block timestamps; hypothetical holding period, estimated fees and gas. Forward returns may differ.",
+    "transactionPrepared": false,
+    "transactionBroadcast": false,
+    "privateKeysHandled": false
+  },
+  "comparisonCount": 3,
+  "transactionBroadcast": false,
+  "privateKeysUsed": false
+}

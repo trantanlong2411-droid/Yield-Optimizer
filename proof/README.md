@@ -1,5 +1,7 @@
 # Yield Optimizer — Verified Pharos Mainnet on-chain proof
 
+[Additional user-exported seven-day STAY_PUT case](./USER-PROOF.md) with original JSON and deterministic calculation replay.
+
 Verified on **3 November 2026** by a successful deployed Cloudflare Worker GitHub Actions run.
 
 - [Live website](https://yield-optimizer.trantanlong2411.workers.dev/)
